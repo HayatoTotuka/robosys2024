@@ -1,4 +1,6 @@
 #!/bin/bash -xv
+# SPDX-FileCopyrightText: 2024 totuka hayato
+# SPDX-License-Identifier: BSD-3-Clause
 
 
 ng () {
