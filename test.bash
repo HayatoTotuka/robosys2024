@@ -15,77 +15,83 @@ out=$(seq 5 | ./plus)
 
 
 
-out=$(echo 123おはようhello | ./kadai1.py)
+out=$(echo 123おはようhello | ./word_count.py)
 [[ "$out" == *"入力された文字数は: 12"* ]]
-out=$(echo 123おはようhello | ./kadai1.py)
+out=$(echo 123おはようhello | ./word_count.py)
 [[ "$out" == *"入力された日本語の数は: 4"* ]]
-out=$(echo 123おはようhello | ./kadai1.py)
+out=$(echo 123おはようhello | ./word_count.py)
 [[ "$out" == *"入力された英語の数は: 5"* ]]
-out=$(echo 123おはようhello | ./kadai1.py)
+out=$(echo 123おはようhello | ./word_count.py)
 [[ "$out" == *"入力された数字の数は: 3"* ]]
 
-out=$(echo | ./kadai1.py)
+out=$(echo | ./word_count.py)
 [[ "$out" == *"入力された文字数は: 0"* ]]
-out=$(echo | ./kadai1.py)
+out=$(echo | ./word_count.py)
 [[ "$out" == *"入力された日本語の数は: 0"* ]]
-out=$(echo | ./kadai1.py)
+out=$(echo | ./word_count.py)
 [[ "$out" == *"入力された英語の数は: 0"* ]]
-out=$(echo | ./kadai1.py)
+out=$(echo | ./word_count.py)
 [[ "$out" == *"入力された数字の数は: 0"* ]]
 
-out=$(echo おはようhello | ./kadai1.py)
+out=$(echo おはようhello | ./word_count.py)
 [[ "$out" == *"入力された文字数は: 9"* ]]
-out=$(echo おはようhello | ./kadai1.py)
+out=$(echo おはようhello | ./word_count.py)
 [[ "$out" == *"入力された日本語の数は: 4"* ]]
-out=$(echo おはようhello | ./kadai1.py)
+out=$(echo おはようhello | ./word_count.py)
 [[ "$out" == *"入力された英語の数は: 5"* ]]
-out=$(echo おはようhello | ./kadai1.py)
+out=$(echo おはようhello | ./word_count.py)
 [[ "$out" == *"入力された数字の数は: 0"* ]]
 
-out=$(echo 123hello | ./kadai1.py)
+out=$(echo 123hello | ./word_count.py)
 [[ "$out" == *"入力された文字数は: 8"* ]]
-out=$(echo 123hello | ./kadai1.py)
+out=$(echo 123hello | ./word_count.py)
 [[ "$out" == *"入力された日本語の数は: 0"* ]]
-out=$(echo 123hello | ./kadai1.py)
+out=$(echo 123hello | ./word_count.py)
 [[ "$out" == *"入力された英語の数は: 5"* ]]
-out=$(echo 123hello | ./kadai1.py)
+out=$(echo 123hello | ./word_count.py)
 [[ "$out" == *"入力された数字の数は: 3"* ]]
 
-out=$(echo 123おはよう | ./kadai1.py)
+out=$(echo 123おはよう | ./word_count.py)
 [[ "$out" == *"入力された文字数は: 7"* ]]
-out=$(echo 123おはよう | ./kadai1.py)
+out=$(echo 123おはよう | ./word_count.py)
 [[ "$out" == *"入力された日本語の数は: 4"* ]]
-out=$(echo 123おはよう | ./kadai1.py)
+out=$(echo 123おはよう | ./word_count.py)
 [[ "$out" == *"入力された英語の数は: 0"* ]]
-out=$(echo 123おはよう | ./kadai1.py)
+out=$(echo 123おはよう | ./word_count.py)
 [[ "$out" == *"入力された数字の数は: 3"* ]]
 
-out=$(echo 123 | ./kadai1.py)
+out=$(echo 123 | ./word_count.py)
 [[ "$out" == *"入力された文字数は: 3"* ]]
-out=$(echo 123 | ./kadai1.py)
+out=$(echo 123 | ./word_count.py)
 [[ "$out" == *"入力された日本語の数は: 0"* ]]
-out=$(echo 123 | ./kadai1.py)
+out=$(echo 123 | ./word_count.py)
 [[ "$out" == *"入力された英語の数は: 0"* ]]
-out=$(echo 123 | ./kadai1.py)
+out=$(echo 123 | ./word_count.py)
 [[ "$out" == *"入力された数字の数は: 3"* ]]
 
-out=$(echo おはよう | ./kadai1.py)
+out=$(echo おはよう | ./word_count.py)
 [[ "$out" == *"入力された文字数は: 4"* ]]
-out=$(echo おはよう | ./kadai1.py)
+out=$(echo おはよう | ./word_count.py)
 [[ "$out" == *"入力された日本語の数は: 4"* ]]
-out=$(echo おはよう | ./kadai1.py)
+out=$(echo おはよう | ./word_count.py)
 [[ "$out" == *"入力された英語の数は: 0"* ]]
-out=$(echo おはよう | ./kadai1.py)
+out=$(echo おはよう | ./word_count.py)
 [[ "$out" == *"入力された数字の数は: 0"* ]]
 
-out=$(echo hello | ./kadai1.py)
+out=$(echo hello | ./word_count.py)
 [[ "$out" == *"入力された文字数は: 5"* ]]
-out=$(echo hello | ./kadai1.py)
+out=$(echo hello | ./word_count.py)
 [[ "$out" == *"入力された日本語の数は: 0"* ]]
-out=$(echo hello | ./kadai1.py)
+out=$(echo hello | ./word_count.py)
 [[ "$out" == *"入力された英語の数は: 5"* ]]
-out=$(echo hello | ./kadai1.py)
+out=$(echo hello | ./word_count.py)
 [[ "$out" == *"入力された数字の数は: 0"* ]]
+
+out=$(echo ειά σας | ./word_count.py)
+[[ "$out" == *"日本語、英語、数字を入力してください"* ]]
+
+out=$(echo ειά σας | ./word_count.py)
+[ "$?" = 1 ] || ng "$LINENO"
 
 
 [ "${res}" = 0 ] && echo OK 
